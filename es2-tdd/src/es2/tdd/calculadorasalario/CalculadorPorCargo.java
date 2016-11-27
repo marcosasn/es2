@@ -13,21 +13,21 @@ public class CalculadorPorCargo implements Calculador {
 			
 		} else if(funcionario.getmCargo() == Cargo.DBA){
 			if(funcionario.getmSalario() >= 2000){
-				return funcionario.getmSalario() - ((funcionario.getmSalario()*25)/100);
+				return funcionario.getmSalario() - funcionario.getmSalario()*.25;
 			} else {
-				return funcionario.getmSalario() - ((funcionario.getmSalario()*15)/100);
+				return funcionario.getmSalario() - funcionario.getmSalario()*.15;
 			}
 		} else if(funcionario.getmCargo() == Cargo.TESTADOR){
 			if(funcionario.getmSalario() >= 2000){
-				return funcionario.getmSalario() - ((funcionario.getmSalario()*25)/100);
+				return funcionario.getmSalario() - funcionario.getmSalario()*.25;
 			} else {
-				return funcionario.getmSalario() - ((funcionario.getmSalario()*15)/100);
+				return funcionario.getmSalario() - funcionario.getmSalario()*.15;
 			}
 		} else if (funcionario.getmCargo() == Cargo.GERENTE){
 			if(funcionario.getmSalario() >= 5000){
-				return funcionario.getmSalario() - ((funcionario.getmSalario()*30)/100);
+				return funcionario.getmSalario() - funcionario.getmSalario()*.30;
 			} else {
-				return funcionario.getmSalario() - ((funcionario.getmSalario()*20)/100);
+				return funcionario.getmSalario() - funcionario.getmSalario()*.20;
 			}
 		}
 		return 0;

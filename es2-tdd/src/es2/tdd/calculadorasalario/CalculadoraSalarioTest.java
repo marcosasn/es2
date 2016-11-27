@@ -47,12 +47,18 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.setFuncionario(new Funcionario(nomes[0],emails[0],salarios[3],cargos[0]));
 		assertEquals(cs.calcular(), 4000, 0);
-		
 		cs.resetarListaFuncionarios();
 		cs.setFuncionario(new Funcionario(nomes[0],emails[0],outros[4],cargos[0]));
 		assertEquals(outros[4]-(outros[4]*0.10), cs.calcular(), 0);
-		System.out.println(cs.calcular());
-		System.out.println(outros[4]-(outros[4]*0.10));
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[0],emails[0],outros[5],cargos[0]));
+		assertEquals(outros[5]-(outros[5]*0.20), cs.calcular(), 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[0],emails[0],outros[8],cargos[0]));
+		assertEquals(outros[8]-(outros[8]*0.10), cs.calcular(), 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[0],emails[0],outros[9],cargos[0]));
+		assertEquals(outros[9]-(outros[9]*0.10), cs.calcular(), 0);
 	}
 	
 	@Test
@@ -75,6 +81,18 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.setFuncionario(new Funcionario(nomes[1],emails[1],salarios[3],cargos[1]));
 		assertEquals(cs.calcular(), 3750, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[1],emails[1],outros[2],cargos[1]));
+		assertEquals(cs.calcular(), outros[2]-outros[2]*0.15, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[1],emails[1],outros[3],cargos[1]));
+		assertEquals(cs.calcular(), outros[3]-outros[3]*0.25, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[1],emails[1],outros[8],cargos[1]));
+		assertEquals(cs.calcular(), outros[8]-outros[8]*0.15, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[1],emails[1],outros[9],cargos[1]));
+		assertEquals(cs.calcular(), outros[9]-outros[9]*0.15, 0);
 	}
 	
 	@Test
@@ -97,6 +115,18 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.setFuncionario(new Funcionario(nomes[2],emails[2],salarios[3],cargos[2]));
 		assertEquals(cs.calcular(), 3750, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[2],emails[2],outros[2],cargos[2]));
+		assertEquals(cs.calcular(), outros[2]-outros[2]*0.15, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[2],emails[2],outros[3],cargos[2]));
+		assertEquals(cs.calcular(), outros[3]-outros[3]*0.25, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[2],emails[2],outros[8],cargos[2]));
+		assertEquals(cs.calcular(), outros[8]-outros[8]*0.15, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[2],emails[2],outros[9],cargos[2]));
+		assertEquals(cs.calcular(), outros[9]-outros[9]*0.15, 0);
 	}
 	
 	@Test
@@ -119,6 +149,18 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.setFuncionario(new Funcionario(nomes[3],emails[3],salarios[3],cargos[3]));
 		assertEquals(cs.calcular(), 3500, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[3],emails[3],outros[6],cargos[3]));
+		assertEquals(cs.calcular(), outros[6]-outros[6]*.20, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[3],emails[3],outros[7],cargos[3]));
+		assertEquals(cs.calcular(), outros[7]-outros[7]*.30, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[3],emails[3],outros[8],cargos[3]));
+		assertEquals(cs.calcular(), outros[8]-outros[8]*.20, 0);
+		cs.resetarListaFuncionarios();
+		cs.setFuncionario(new Funcionario(nomes[3],emails[3],outros[9],cargos[3]));
+		assertEquals(cs.calcular(), outros[9]-outros[9]*.20, 0);
 	}
 	
 	public void popularListaFuncionarios(){
