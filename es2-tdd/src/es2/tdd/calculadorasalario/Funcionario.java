@@ -4,6 +4,7 @@ public class Funcionario {
 	private String mNome, mEmail;
 	private int mSalario;
 	private Cargo mCargo;
+	private CalculadorDesconto mCalculador;
 
 	public Funcionario(String nome, String email, int salario, Cargo cargo) {
 		mNome = nome;
@@ -11,8 +12,19 @@ public class Funcionario {
 		mSalario = salario;
 		mCargo = cargo;
 	}
+	
+	public void setCalculador(CalculadorDesconto calculador){
+		mCalculador = calculador;
+	}
 
-	public int getmSalario() {
+	public double getmSalario() {
+		if(mCalculador == null){
+			return getmSalarioLiquido();
+		}
+		return getmSalarioLiquido() - mCalculador.calcular(this);
+	}
+		
+	public double getmSalarioLiquido() {
 		return mSalario;
 	}
 
