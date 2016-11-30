@@ -2,18 +2,18 @@ package es2.tdd.calculadorasalario;
 
 public class Funcionario {
 	private String mNome, mEmail;
-	private int mSalario;
+	private double mSalario;
 	private Cargo mCargo;
 	private CalculadorDesconto mCalculador;
 
-	public Funcionario(String nome, String email, int salario, Cargo cargo) {
+	public Funcionario(String nome, String email, double salario, Cargo cargo) {
 		mNome = nome;
 		mEmail = email;
 		mSalario = salario;
 		mCargo = cargo;
 	}
 	
-	public void setCalculador(CalculadorDesconto calculador){
+	public void setCalculadorDesconto(CalculadorDesconto calculador){
 		mCalculador = calculador;
 	}
 

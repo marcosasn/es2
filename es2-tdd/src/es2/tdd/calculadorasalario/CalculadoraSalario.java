@@ -5,14 +5,14 @@ import java.util.List;
 
 public class CalculadoraSalario {
 	private List<Funcionario> mFuncionarios;
-	private CalculadorDesconto mCalculador;
+	private CalculadorDesconto mCalculadorDesconto;
 	
 	public CalculadoraSalario(){
 		this(new CalculadorDescontoCargo());
 	}
 	
 	public CalculadoraSalario(CalculadorDesconto calculador){
-		mCalculador = calculador;
+		mCalculadorDesconto = calculador;
 		mFuncionarios = new ArrayList<Funcionario>();
 	}
 	
@@ -27,13 +27,13 @@ public class CalculadoraSalario {
 	public double calcular() {
 		double total=0;
 		for (Funcionario funcionario : mFuncionarios) {
-			funcionario.setCalculador(mCalculador);
+			funcionario.setCalculadorDesconto(mCalculadorDesconto);
 			total += funcionario.getmSalario();
 		}
 		return total;
 	}
 	
 	public void setCalculador(CalculadorDesconto calculador){
-		mCalculador = calculador;
+		mCalculadorDesconto = calculador;
 	}
 }
