@@ -32,7 +32,7 @@ public class CalculadoraSalarioTest {
 	}
 	
 	@Test
-	public void desenvolvedorTest() {
+	public void desenvolvedorTest() throws Exception {
 		funcionarios = new ArrayList<Funcionario>();
 		cs =  new CalculadoraSalario();
 		
@@ -57,16 +57,26 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.addFuncionario(new Funcionario(nomes[0],emails[0],outros[5],cargos[0]));
 		assertEquals(outros[5]-(outros[5]*0.20), cs.calcular(), 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[0],emails[0],outros[8],cargos[0]));
-		assertEquals(outros[8]-(outros[8]*0.10), cs.calcular(), 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[0],emails[0],outros[9],cargos[0]));
-		assertEquals(outros[9]-(outros[9]*0.10), cs.calcular(), 0);
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[0],emails[0],outros[8],cargos[0]));
+			assertEquals(outros[8]-(outros[8]*0.10), cs.calcular(), 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[0],emails[0],outros[9],cargos[0]));
+			assertEquals(outros[9]-(outros[9]*0.10), cs.calcular(), 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
 	}
 	
 	@Test
-	public void dbaTest() {
+	public void dbaTest() throws Exception {
 		funcionarios = new ArrayList<Funcionario>();
 		cs =  new CalculadoraSalario();
 		
@@ -91,16 +101,26 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.addFuncionario(new Funcionario(nomes[1],emails[1],outros[3],cargos[1]));
 		assertEquals(cs.calcular(), outros[3]-outros[3]*0.25, 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[1],emails[1],outros[8],cargos[1]));
-		assertEquals(cs.calcular(), outros[8]-outros[8]*0.15, 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[1],emails[1],outros[9],cargos[1]));
-		assertEquals(cs.calcular(), outros[9]-outros[9]*0.15, 0);
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[1],emails[1],outros[8],cargos[1]));
+			assertEquals(cs.calcular(), outros[8]-outros[8]*0.15, 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[1],emails[1],outros[9],cargos[1]));
+			assertEquals(cs.calcular(), outros[9]-outros[9]*0.15, 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
 	}
 	
 	@Test
-	public void testadorTest() {
+	public void testadorTest() throws Exception {
 		funcionarios = new ArrayList<Funcionario>();
 		cs =  new CalculadoraSalario();
 		
@@ -125,16 +145,26 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.addFuncionario(new Funcionario(nomes[2],emails[2],outros[3],cargos[2]));
 		assertEquals(cs.calcular(), outros[3]-outros[3]*0.25, 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[2],emails[2],outros[8],cargos[2]));
-		assertEquals(cs.calcular(), outros[8]-outros[8]*0.15, 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[2],emails[2],outros[9],cargos[2]));
-		assertEquals(cs.calcular(), outros[9]-outros[9]*0.15, 0);
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[2],emails[2],outros[8],cargos[2]));
+			assertEquals(cs.calcular(), outros[8]-outros[8]*0.15, 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[2],emails[2],outros[9],cargos[2]));
+			assertEquals(cs.calcular(), outros[9]-outros[9]*0.15, 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
 	}
 	
 	@Test
-	public void gerenteTest() {
+	public void gerenteTest() throws Exception {
 		funcionarios = new ArrayList<Funcionario>();
 		cs =  new CalculadoraSalario();
 		
@@ -159,15 +189,25 @@ public class CalculadoraSalarioTest {
 		cs.resetarListaFuncionarios();
 		cs.addFuncionario(new Funcionario(nomes[3],emails[3],outros[7],cargos[3]));
 		assertEquals(cs.calcular(), outros[7]-outros[7]*.30, 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[3],emails[3],outros[8],cargos[3]));
-		assertEquals(cs.calcular(), outros[8]-outros[8]*.20, 0);
-		cs.resetarListaFuncionarios();
-		cs.addFuncionario(new Funcionario(nomes[3],emails[3],outros[9],cargos[3]));
-		assertEquals(cs.calcular(), outros[9]-outros[9]*.20, 0);
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[3],emails[3],outros[8],cargos[3]));
+			assertEquals(cs.calcular(), outros[8]-outros[8]*.20, 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
+		
+		try{
+			cs.resetarListaFuncionarios();
+			cs.addFuncionario(new Funcionario(nomes[3],emails[3],outros[9],cargos[3]));
+			assertEquals(cs.calcular(), outros[9]-outros[9]*.20, 0);
+		} catch(Exception e){
+			assertEquals(e.getMessage(), "Salário não pode ser menor ou igual a zero.");
+		}
 	}
 	
-	public void popularListaFuncionarios(){
+	public void popularListaFuncionarios() throws Exception {
 		for(int i=0; i<4; i++){
 			funcionarios.add(new Funcionario(nomes[i],emails[i],salarios[0],cargos[i]));
 		}

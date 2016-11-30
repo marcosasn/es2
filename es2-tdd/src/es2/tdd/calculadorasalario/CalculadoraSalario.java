@@ -12,11 +12,17 @@ public class CalculadoraSalario {
 	}
 	
 	public CalculadoraSalario(CalculadorDesconto calculador){
+		if(calculador == null){
+			mCalculadorDesconto = new CalculadorDescontoCargo();
+		}
 		mCalculadorDesconto = calculador;
 		mFuncionarios = new ArrayList<Funcionario>();
 	}
 	
-	public void addFuncionario(Funcionario funcionario){
+	public void addFuncionario(Funcionario funcionario) throws Exception {
+		if(funcionario == null){
+			throw new Exception("O funcionário não pode ser nulo.");
+		}
 		mFuncionarios.add(funcionario);
 	}
 	
@@ -33,7 +39,10 @@ public class CalculadoraSalario {
 		return total;
 	}
 	
-	public void setCalculador(CalculadorDesconto calculador){
+	public void setCalculador(CalculadorDesconto calculador) throws Exception {
+		if(calculador == null){
+			throw new Exception("O calculador de desconto não pode ser nulo.");
+		}
 		mCalculadorDesconto = calculador;
 	}
 }
