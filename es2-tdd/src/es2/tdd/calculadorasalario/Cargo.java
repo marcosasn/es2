@@ -1,5 +1,30 @@
 package es2.tdd.calculadorasalario;
 
+/**
+ * Cargos que podem ser usados.
+ * 
+ * @author Marcos Nascimento
+ * @since 11-26-2016
+ */
 public enum Cargo {
-	DESENVOLVEDOR, DBA, TESTADOR, GERENTE
+
+	/**
+	 * Cargo Desenvolvedor
+	 */
+	DESENVOLVEDOR,
+
+	/**
+	 * Cargo DBA
+	 */
+	DBA,
+
+	/**
+	 * Cargo Testador
+	 */
+	TESTADOR,
+
+	/**
+	 * Cargo Gerente
+	 */
+	GERENTE
 }
